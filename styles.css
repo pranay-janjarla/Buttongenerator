@@ -1,22 +1,64 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    background-color:rgba(40, 40, 40);
 }
 
 .container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 90%;
+    max-width: 1200px;
+    height: 90%;
 }
 
-.code-display, .controls {
-    width: 90%;
-    max-width: 600px;
+.left-section, .right-section {
+    padding: 20px;
+}
+
+.left-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    border-right: 1px solid #ccc;
+}
+
+.right-section {
+    flex: 1;
+    background-color: #f1f1f1;
+    overflow-y: auto;
+}
+
+.cust-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin-top: 14vh;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+}
+
+.code-display {
+    margin-top: 20px;
 }
 
 .code-display pre {
@@ -25,8 +67,49 @@ body {
     border: 1px solid #ccc;
     white-space: pre-wrap;
     word-wrap: break-word;
+    border-radius: 5px;
+    overflow: auto;
+    height: 200px;
 }
 
-.button {
+.controls {
+    width: 100%;
+}
+
+.controls h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.controls div {
+    margin-bottom: 15px;
+}
+
+.controls label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.controls input[type="range"],
+.controls input[type="color"],
+.controls select,
+.controls input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.controls input[type="color"] {
+    padding: 0;
+}
+
+#flex-options, #grid-options {
     margin-top: 20px;
+}
+
+#flex-options h3, #grid-options h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
 }
