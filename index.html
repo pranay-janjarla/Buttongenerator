@@ -7,8 +7,115 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="left-section">
+    <div class="ide-container">
+        <div class="sidebar">
+            <h2>Customize Your Button</h2>
+            <div class="control-group">
+                <label for="display">Display:</label>
+                <select id="display" onchange="updateStyle()">
+                    <option value="flex">Flex</option>
+                    <option value="grid">Grid</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="width">Width (px):</label>
+                <input type="range" id="width" min="0" max="400" value="100" oninput="updateStyle()">
+            </div>
+            <div class="control-group">
+                <label for="height">Height (px):</label>
+                <input type="range" id="height" min="0" max="1000" value="50" oninput="updateStyle()">
+            </div>
+            <div class="control-group">
+                <label for="border-radius">Border Radius (px):</label>
+                <input type="range" id="border-radius" min="0" max="1000" value="5" oninput="updateStyle()">
+            </div>
+            <div class="control-group">
+                <label for="outline">Outline (px):</label>
+                <input type="range" id="outline" min="0" max="20" value="0" oninput="updateStyle()">
+            </div>
+            <div class="control-group">
+                <label for="border">Border (px):</label>
+                <input type="range" id="border-width" min="0" max="20" value="2" oninput="updateStyle()">
+                <select id="border-style" onchange="updateStyle()">
+                    <option value="solid">Solid</option>
+                    <option value="dashed">Dashed</option>
+                    <option value="dotted">Dotted</option>
+                </select>
+                <input type="color" id="border-color" value="#000000" oninput="updateStyle()">
+            </div>
+            <div class="control-group">
+                <label for="background-color">Background Color:</label>
+                <input type="color" id="background-color" value="#ff0000" oninput="updateStyle()">
+            </div>
+            <div class="control-group">
+                <label for="cursor">Cursor:</label>
+                <select id="cursor" onchange="updateStyle()">
+                    <option value="pointer">Pointer</option>
+                    <option value="crosshair">Crosshair</option>
+                    <option value="grab">Grab</option>
+                </select>
+            </div>
+            <div id="flex-options">
+                <h3>Flex Options</h3>
+                <div class="control-group">
+                    <label for="align-items">Align Items:</label>
+                    <select id="align-items" onchange="updateStyle()">
+                        <option value="stretch">Stretch</option>
+                        <option value="flex-start">Flex Start</option>
+                        <option value="flex-end">Flex End</option>
+                        <option value="center">Center</option>
+                        <option value="baseline">Baseline</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="justify-content">Justify Content:</label>
+                    <select id="justify-content" onchange="updateStyle()">
+                        <option value="flex-start">Flex Start</option>
+                        <option value="flex-end">Flex End</option>
+                        <option value="center">Center</option>
+                        <option value="space-between">Space Between</option>
+                        <option value="space-around">Space Around</option>
+                        <option value="space-evenly">Space Evenly</option>
+                    </select>
+                </div>
+            </div>
+            <div id="grid-options" style="display: none;">
+                <h3>Grid Options</h3>
+                <div class="control-group">
+                    <label for="grid-template">Grid Template:</label>
+                    <select id="grid-template" onchange="updateStyle()">
+                        <option value="column">Column</option>
+                        <option value="row">Row</option>
+                    </select>
+                </div>
+                <div class="control-group" id="column-gap" style="display: none;">
+                    <label for="column-gap-value">Column Gap (px):</label>
+                    <input type="range" id="column-gap-value" min="0" max="100" value="10" oninput="updateStyle()">
+                </div>
+                <div class="control-group" id="row-gap" style="display: none;">
+                    <label for="row-gap-value">Row Gap (px):</label>
+                    <input type="range" id="row-gap-value" min="0" max="100" value="10" oninput="updateStyle()">
+                </div>
+                <div class="control-group">
+                    <label for="grid-row-start">Grid Row Start:</label>
+                    <input type="number" id="grid-row-start" min="1" max="10" value="1" oninput="updateStyle()">
+                </div>
+                <div class="control-group">
+                    <label for="grid-row-end">Grid Row End:</label>
+                    <input type="number" id="grid-row-end" min="1" max="10" value="1" oninput="updateStyle()">
+                </div>
+                <div class="control-group">
+                    <label for="grid-column-start">Grid Column Start:</label>
+                    <input type="number" id="grid-column-start" min="1" max="10" value="1" oninput="updateStyle()">
+                </div>
+                <div class="control-group">
+                    <label for="grid-column-end">Grid Column End:</label>
+                    <input type="number" id="grid-column-end" min="1" max="10" value="1" oninput="updateStyle()">
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <h1>Button Style Generator</h1>
             <div class="cust-btn">
                 <button class="button">Sample Button</button>
             </div>
@@ -27,114 +134,6 @@
     cursor: pointer;
 }
                 </pre>
-            </div>
-        </div>
-        <div class="right-section">
-            <div class="controls">
-                <h2>Customize Your Button</h2>
-                <div>
-                    <label for="display">Display:</label>
-                    <select id="display" onchange="updateStyle()">
-                        <option value="flex">Flex</option>
-                        <option value="grid">Grid</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="width">Width (px):</label>
-                    <input type="range" id="width" min="0" max="400" value="100" oninput="updateStyle()">
-                </div>
-                <div>
-                    <label for="height">Height (px):</label>
-                    <input type="range" id="height" min="0" max="1000" value="50" oninput="updateStyle()">
-                </div>
-                <div>
-                    <label for="border-radius">Border Radius (px):</label>
-                    <input type="range" id="border-radius" min="0" max="1000" value="5" oninput="updateStyle()">
-                </div>
-                <div>
-                    <label for="outline">Outline (px):</label>
-                    <input type="range" id="outline" min="0" max="20" value="0" oninput="updateStyle()">
-                </div>
-                <div>
-                    <label for="border">Border (px):</label>
-                    <input type="range" id="border-width" min="0" max="20" value="2" oninput="updateStyle()">
-                    <select id="border-style" onchange="updateStyle()">
-                        <option value="solid">Solid</option>
-                        <option value="dashed">Dashed</option>
-                        <option value="dotted">Dotted</option>
-                    </select>
-                    <input type="color" id="border-color" value="#000000" oninput="updateStyle()">
-                </div>
-                <div>
-                    <label for="background-color">Background Color:</label>
-                    <input type="color" id="background-color" value="#ff0000" oninput="updateStyle()">
-                </div>
-                <div>
-                    <label for="cursor">Cursor:</label>
-                    <select id="cursor" onchange="updateStyle()">
-                        <option value="pointer">Pointer</option>
-                        <option value="crosshair">Crosshair</option>
-                        <option value="grab">Grab</option>
-                    </select>
-                </div>
-                <div id="flex-options">
-                    <h3>Flex Options</h3>
-                    <div>
-                        <label for="align-items">Align Items:</label>
-                        <select id="align-items" onchange="updateStyle()">
-                            <option value="stretch">Stretch</option>
-                            <option value="flex-start">Flex Start</option>
-                            <option value="flex-end">Flex End</option>
-                            <option value="center">Center</option>
-                            <option value="baseline">Baseline</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="justify-content">Justify Content:</label>
-                        <select id="justify-content" onchange="updateStyle()">
-                            <option value="flex-start">Flex Start</option>
-                            <option value="flex-end">Flex End</option>
-                            <option value="center">Center</option>
-                            <option value="space-between">Space Between</option>
-                            <option value="space-around">Space Around</option>
-                            <option value="space-evenly">Space Evenly</option>
-                        </select>
-                    </div>
-                </div>
-                <div id="grid-options" style="display: none;">
-                    <h3>Grid Options</h3>
-                    <div>
-                        <label for="grid-template">Grid Template:</label>
-                        <select id="grid-template" onchange="updateStyle()">
-                            <option value="column">Column</option>
-                            <option value="row">Row</option>
-                        </select>
-                    </div>
-                    <div id="column-gap" style="display: none;">
-                        <label for="column-gap-value">Column Gap (px):</label>
-                        <input type="range" id="column-gap-value" min="0" max="100" value="10" oninput="updateStyle()">
-                    </div>
-                    <div id="row-gap" style="display: none;">
-                        <label for="row-gap-value">Row Gap (px):</label>
-                        <input type="range" id="row-gap-value" min="0" max="100" value="10" oninput="updateStyle()">
-                    </div>
-                    <div>
-                        <label for="grid-row-start">Grid Row Start:</label>
-                        <input type="number" id="grid-row-start" min="1" max="10" value="1" oninput="updateStyle()">
-                    </div>
-                    <div>
-                        <label for="grid-row-end">Grid Row End:</label>
-                        <input type="number" id="grid-row-end" min="1" max="10" value="1" oninput="updateStyle()">
-                    </div>
-                    <div>
-                        <label for="grid-column-start">Grid Column Start:</label>
-                        <input type="number" id="grid-column-start" min="1" max="10" value="1" oninput="updateStyle()">
-                    </div>
-                    <div>
-                        <label for="grid-column-end">Grid Column End:</label>
-                        <input type="number" id="grid-column-end" min="1" max="10" value="1" oninput="updateStyle()">
-                    </div>
-                </div>
             </div>
         </div>
     </div>
